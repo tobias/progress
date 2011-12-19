@@ -39,6 +39,8 @@
   "Extracts keyword/value pairs from the front of XS into a map, returning the map and the remainder of XS."
   [xs]
   (let [options 
-        (apply hash-map (flatten (take-while #(keyword? (first %)) (partition 2 xs))))]
+        (apply hash-map (reduce (fn [acc v] (conj acc (first v) (last v)))
+                                []
+                                (take-while #(keyword? (first %)) (partition 2 xs))))]
     [options (subvec (vec xs) (* 2 (count options)))]))
 

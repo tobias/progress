@@ -30,4 +30,5 @@
   (extract-options [:a :b :foo]) => [{:a :b} [:foo]]
   (extract-options [:a :b]) => [{:a :b} []]
   (extract-options [:a :b "c" "d"]) => [{:a :b} ["c" "d"]]
-  (extract-options [:a :b :c :d "c" "d"]) => [{:a :b :c :d} ["c" "d"]])
+  (extract-options [:a :b :c :d "c" "d"]) => [{:a :b :c :d} ["c" "d"]]
+  (extract-options [:a '(+ 1 1)]) => [{:a '(+ 1 1)} []])
