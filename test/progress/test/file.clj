@@ -21,6 +21,12 @@
   (provided (progress-bar 0) => ""
             (file-ratio 0 1) => ""))
 
+(fact "display-file-progress when given a final size of 0"
+  (display-file-progress 1 0) => nil
+  (provided (progress-bar anything) => nil :times 0
+            (file-ratio anything anything) => nil :times 0
+            (convert-unit 1) => ""))
+
 (fact "display-file-progress with no filesize"
   (display-file-progress 1) => nil
   (provided (convert-unit 1) => ""))

@@ -15,7 +15,7 @@ bar or a simple final-size counter, depending on wether a final-size is given."
   ([current-size]
      (display-file-progress current-size nil))
   ([current-size final-size]
-     (if (nil? final-size)
+     (if (or (nil? final-size) (<= final-size 0))
        (padded-printr (convert-unit current-size))
        (padded-printr
         (str
