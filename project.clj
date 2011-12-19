@@ -1,4 +1,4 @@
-(defproject progress "1.0.0"
+(defproject progress "1.0.1"
   :description "Useful progress indicators"
   :url "https://github.com/tobias/progress"
   :dependencies [[org.clojure/clojure "1.3.0"]]
