@@ -1,6 +1,7 @@
 (ns progress.file
   (:use progress.bar
-        progress.util))
+        progress.util)
+  (:require [clojure.java.io :as io]))
 
 
 (defn file-ratio
@@ -33,13 +34,14 @@ bar or a simple final-size counter, depending on wether a final-size is given."
   "Checks the progress of a download, displaying progress data."
   [f options]
   (Thread/sleep (get options :monitor-interval 100))
-  (if (.exists f)
-    (let [current-size (.length f)
-          final-size (:filesize options)]
-      (when-not (done? current-size (:filesize options))
-        (display-file-progress current-size final-size)
-        (recur f options)))
-    (recur f options)))
+  (let [file (io/file f)]
+    (if (.exists file)
+      (let [current-size (.length file)
+            final-size (:filesize options)]
+        (when-not (done? current-size (:filesize options))
+          (display-file-progress current-size final-size)
+          (recur f options)))
+      (recur f options))))
 
 (defn monitor
   "Starts a thread to handle check-progress"
