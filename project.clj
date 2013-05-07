@@ -7,4 +7,5 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :url "https://github.com/tobias/progress"
   :min-lein-version "2.0.0"
-  :description "Useful(?) progress indicators")
+  :description "Useful(?) progress indicators"
+  :lein-release {:deploy-via :clojars})
