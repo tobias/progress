@@ -1,4 +1,4 @@
-(defproject progress/progress "1.0.2" 
+(defproject progress/progress "1.0.3-SNAPSHOT" 
   :profiles {:dev
              {:dependencies
               [[org.clojure/clojure "1.4.0"]
