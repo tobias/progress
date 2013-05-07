@@ -5,10 +5,10 @@ the progress of file copy/download operations.
 
 ## Usage
 
-The current release is [1.0.0](http://clojars.org/progress). You can
+The current release is [1.0.1](http://clojars.org/progress). You can
 add it to a Leiningen project via:
 
-    [progress "1.0.0"]
+    [progress "1.0.1"]
     
 To use it for file progress, use the `with-file-progress` macro from the
 `progress.file` namespace:
