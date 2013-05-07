@@ -1,6 +1,10 @@
-(defproject progress "1.0.1"
-  :description "Useful progress indicators"
+(defproject progress/progress "1.0.2-SNAPSHOT" 
+  :profiles {:dev
+             {:dependencies
+              [[org.clojure/clojure "1.4.0"]
+               [midje "1.5.1"]]}}
+  :license {:name "Eclipse Public License"
+            :url "http://www.eclipse.org/legal/epl-v10.html"}
   :url "https://github.com/tobias/progress"
-  :dependencies [[org.clojure/clojure "1.3.0"]]
-  :dev-dependencies [[midje "1.3.0"]
-                      [com.intelie/lazytest "1.0.0-SNAPSHOT"]])
+  :min-lein-version "2.0.0"
+  :description "Useful(?) progress indicators")
